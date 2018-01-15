@@ -130,7 +130,7 @@
       };
       var invDetId = getUrlParameter('skillazInterviewId');
       var e = document.getElementsByClassName("gotointerview");
-      var url = invDetId ? 'https://interview.skillaz.co/?skillazInterviewId=' + invDetId : GOTOINTERVIEWURL;
+      var url = invDetId ? 'https://interview.skillaz.co/' + invDetId : GOTOINTERVIEWURL;
       for (var i = 0; i < e.length; i++) {
         e[i].setAttribute('href', url);
       }
