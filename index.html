@@ -41,7 +41,7 @@
   <div class="header">
     <div class="container">
       <div class="header-title"><span>ОТКРЫТА ВАКАНСИЯ</span>Оператор-кассир заправочных станций</div>
-      <div class="header-subtitle">Предлагаем стабильную работу с удобным графиком, ежемесячными премиями, полным соцпакетом и ДМС</div><a href="https://interview.skillaz.co/?vacancyId=huFkFSE27x4xD56Zz" class="button">Откликнуться</a>
+      <div class="header-subtitle">Предлагаем стабильную работу с удобным графиком, ежемесячными премиями, полным соцпакетом и ДМС</div><a class="gotointerview" href="https://interview.skillaz.co/?vacancyId=huFkFSE27x4xD56Zz" class="button">Откликнуться</a>
     </div>
     <div class="header-arrow"></div>
   </div>
@@ -63,7 +63,7 @@
   <div class="join">
     <div class="join-photo"></div>
     <div class="join-info">
-      <div class="join-title">Присоединяйся к команде<br/>Сети АЗС «Газпромнефть»</div><a href="https://interview.skillaz.co/?vacancyId=huFkFSE27x4xD56Zz" class="button">Откликнуться</a>
+      <div class="join-title">Присоединяйся к команде<br/>Сети АЗС «Газпромнефть»</div><a class="gotointerview" href="https://interview.skillaz.co/?vacancyId=huFkFSE27x4xD56Zz" class="button">Откликнуться</a>
     </div>
   </div>
   <div id="conditions" class="conditions">
@@ -105,7 +105,7 @@
             <div class="way-item__info-text">В случае успешного прохождения онлайн-отбора<br/> с Вами свяжутся наши специалисты</div>
           </div>
         </div>
-      </div><a href="https://interview.skillaz.co/?vacancyId=huFkFSE27x4xD56Zz" class="button">Откликнуться</a>
+      </div><a class="gotointerview" href="https://interview.skillaz.co/?vacancyId=huFkFSE27x4xD56Zz" class="button">Откликнуться</a>
     </div>
   </div>
   <div class="footer">
@@ -114,4 +114,26 @@
       <div class="page-footer__copyright">2017 © Сеть АЗС "Газпромнефть"</div>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+        }
+      };
+      var invDetId = getUrlParameter('skillazInterviewId');
+      var e = document.getElementsByClassName("gotointerview");
+      var url = invDetId ? 'https://interview.skillaz.co/?skillazInterviewId=' + invDetId : GOTOINTERVIEWURL;
+      for (var i = 0; i < e.length; i++) {
+        e[i].setAttribute('href', url);
+      }
+    });
+  </script>
 </body>
